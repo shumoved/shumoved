@@ -1,0 +1,282 @@
+<html>
+<head>
+<head>
+
+<link rel="shortcut icon" href="/favicon.png" type="image/png">
+
+<meta name="verify-v1" content="b7iA6HCawldaAPRbl0NBInc+bwB9v2k5S+28LFV0WyY=" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Shumoved Project</title>
+
+
+<style type="text/css">
+
+a {font-family:verdana,arial,helvetica,sans-serif; font-size: 1.5em; color:#ffffff; text-decoration:12ac0e; word-wrap: break-word;}
+a:hover {text-decoration:underline; color:#ffffff;}
+body {width: 776px;  margin-left: auto; margin-right: auto; background-color:#000000; color:#ffffff; font-size:25px; font-family:verdana,arial,helvetica,sans-serif; line-height:25px;}
+
+
+.justify {
+    text-align: justify;
+  }
+
+
+
+
+
+  .text-with-background {
+    background-image: url('bg1.jpg'); /* Замените на путь к вашей картинке */
+    background-repeat: repeat; /* Не повторять изображение */
+    padding: 20px; /* Добавляем отступы для текста */
+    color: #12ac0e; /* Устанавливаем белый цвет текста для лучшей видимости на темном фоне */
+  }
+
+ 
+
+
+.player {
+  width: 600px;
+  background: #111;
+  padding: 35px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: #00ffcc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+
+
+
+
+
+
+<body> 
+
+
+
+ 
+ 
+ 
+ 
+
+<table border="0" width="776" height="867" cellspacing="0" cellpadding="0">
+
+<tr>
+  <td width="776" height="180">
+  
+  <a href="index.html" target="_top"><img src="top.gif" width="776" 
+   height="148" alt="En"></a>
+        </td>
+		
+		<td width="20" height="148">
+
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+    <td width="776" height="642" background="bg2.gif" valign="top">      
+ 
+
+
+
+
+
+
+
+<div class="text-with-background" class="justify">
+
+<p style="text-align: justify;">
+
+  <h1></h1>
+
+
+    
+	
+	
+	
+ <b><h2> 
+ <p style="text-align: justify;">
+
+ 
+ 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ 
+ </b></p>
+</p>
+</h2>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <br>
+  <br>
+  <br>
+  
+  <h1>Contact</h1>
+  <p>
+    
+  <br>
+<h2>  dshumoved@gmail.com</h2>
+  <br>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+  
+
+</div>
+ </td>
+
+
+ </tr>
+</table>
+
+
+
+
+
+
+<script>
+let currentAudio = null;
+
+document.querySelectorAll(".player").forEach(player => {
+
+  const audio = player.querySelector("audio");
+  const playBtn = player.querySelector(".play");
+  const progress = player.querySelector(".progress");
+  const time = player.querySelector(".time");
+
+  playBtn.onclick = () => {
+
+    // если играет другой плеер — останавливаем
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      document.querySelectorAll(".play").forEach(b => b.textContent = "_PLAY");
+    }
+
+    if (audio.paused) {
+      audio.play();
+      playBtn.textContent = "PAUSE";
+      currentAudio = audio;
+    } else {
+      audio.pause();
+      playBtn.textContent = "_PLAY";
+    }
+  };
+
+  audio.ontimeupdate = () => {
+    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+    time.textContent = formatTime(audio.currentTime);
+  };
+
+  progress.oninput = () => {
+    audio.currentTime = (progress.value / 100) * audio.duration;
+  };
+
+});
+
+function formatTime(sec) {
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${s < 10 ? "0" : ""}${s}`;
+}
+</script>
+
+
+
+
+
+
+</body>
+</html>
