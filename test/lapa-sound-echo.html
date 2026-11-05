@@ -155,6 +155,24 @@ tags: echo, instrumental, relax electronic music
 
 
 
+
+<div align="center">
+<div id="pic">
+   <img src="echo-art.jpg" width="250" height="250" 
+   alt="Echo (Instrumental)">
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
 Hearing the echo of your own voice feels almost like a form of hypnosis. In general, there is something special about the experience of hearing an echo. Sound reflecting off surfaces can multiply and transform, often adding beauty and richness to the original sound. Musicians know this well and frequently use the effect in their compositions. Sound designers working on film soundtracks also make use of it whenever the scene calls for it.
 <br><br>
@@ -239,66 +257,6 @@ I invite you to listen.
   <br>
   <br>
   
-  
-  
-  <div class="player">
-  <button class="play">_PLAY</button>
-  <input type="range" class="progress" value="0">
-  <span class="time">0:00</span>
-  <audio src="2026-01-26-lapa-sound-echo-instrumental.mp3"></audio>
-</div>
-
-
-
-
-
-
-<script>
-document.querySelectorAll(".player").forEach(player => {
-
-  const audio = player.querySelector("audio");
-  const playBtn = player.querySelector(".play");
-  const progress = player.querySelector(".progress");
-  const time = player.querySelector(".time");
-
-  playBtn.onclick = () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.textContent = "PAUSE";
-    } else {
-      audio.pause();
-      playBtn.textContent = "_PLAY";
-    }
-  };
-
-  audio.ontimeupdate = () => {
-    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-    time.textContent = formatTime(audio.currentTime);
-  };
-
-  progress.oninput = () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  };
-
-});
-
-function formatTime(sec) {
-  const m = Math.floor(sec / 60);
-  const s = Math.floor(sec % 60);
-  return `${m}:${s < 10 ? "0" : ""}${s}`;
-}
-
-
-
-
-
-
-
-
-
-
-
-</script>
   
   
   

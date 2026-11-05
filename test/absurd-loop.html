@@ -158,6 +158,20 @@ tags: 2019, chill, hip-hop, electronic music
 <br>
 <br>
 <br>
+
+<div align="center">
+<div id="pic">
+   <img src="absurd-loop-art.jpg" width="250" height="250" 
+   alt="Absurd loop">
+  </div>
+  <br>
+
+
+
+
+
+
+
 Piano solos and chords, with a broken, deliberately awkward rhythm.. 
 <br>
 <br>
@@ -234,64 +248,8 @@ I invite you to listen.
   
   
   
-  <div class="player">
-  <button class="play">_PLAY</button>
-  <input type="range" class="progress" value="0">
-  <span class="time">0:00</span>
-  <audio src="2019-09-05-shumoved-absurd-loop.mp3"></audio>
-</div>
 
 
-
-
-
-
-<script>
-document.querySelectorAll(".player").forEach(player => {
-
-  const audio = player.querySelector("audio");
-  const playBtn = player.querySelector(".play");
-  const progress = player.querySelector(".progress");
-  const time = player.querySelector(".time");
-
-  playBtn.onclick = () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.textContent = "PAUSE";
-    } else {
-      audio.pause();
-      playBtn.textContent = "_PLAY";
-    }
-  };
-
-  audio.ontimeupdate = () => {
-    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-    time.textContent = formatTime(audio.currentTime);
-  };
-
-  progress.oninput = () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  };
-
-});
-
-function formatTime(sec) {
-  const m = Math.floor(sec / 60);
-  const s = Math.floor(sec % 60);
-  return `${m}:${s < 10 ? "0" : ""}${s}`;
-}
-
-
-
-
-
-
-
-
-
-
-
-</script>
   
   
   
