@@ -154,6 +154,25 @@ tags: 2019 noises, soundtrack, experimental electronic music, FM-Reciever
 </h2>
 
 
+<div align="center">
+<div id="pic">
+   <img src="radio-wave-confusion-art.jpg" width="250" height="250" 
+   alt="Radio wave confusion">
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 <br>
@@ -232,66 +251,6 @@ I invite you to listen.
   <br>
   <br>
   
-  
-  
-  <div class="player">
-  <button class="play">_PLAY</button>
-  <input type="range" class="progress" value="0">
-  <span class="time">0:00</span>
-  <audio src="2019-09-03-shumoved-radio-wave-confusion.mp3"></audio>
-</div>
-
-
-
-
-
-
-<script>
-document.querySelectorAll(".player").forEach(player => {
-
-  const audio = player.querySelector("audio");
-  const playBtn = player.querySelector(".play");
-  const progress = player.querySelector(".progress");
-  const time = player.querySelector(".time");
-
-  playBtn.onclick = () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.textContent = "PAUSE";
-    } else {
-      audio.pause();
-      playBtn.textContent = "_PLAY";
-    }
-  };
-
-  audio.ontimeupdate = () => {
-    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-    time.textContent = formatTime(audio.currentTime);
-  };
-
-  progress.oninput = () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  };
-
-});
-
-function formatTime(sec) {
-  const m = Math.floor(sec / 60);
-  const s = Math.floor(sec % 60);
-  return `${m}:${s < 10 ? "0" : ""}${s}`;
-}
-
-
-
-
-
-
-
-
-
-
-
-</script>
   
   
   

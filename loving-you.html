@@ -155,6 +155,29 @@ tags: deep house, loving you, soft sound, electronic dance music
 
 
 
+
+
+
+<div align="center">
+<div id="pic">
+   <img src="loving-you-art.jpg" width="250" height="250" 
+   alt="Loving You">
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br>The danceable rhythms of house music. The track features a vocal sample recorded by the artist in 2008, originally intended for a different track, along with groovy synthesizers. (The vocal recording took place in a forest.)
 <br><br>
 The track is dedicated to love and intimate relationships.  
@@ -229,66 +252,6 @@ I invite you to listen.
   <br>
   <br>
   
-  
-  
-  <div class="player">
-  <button class="play">_PLAY</button>
-  <input type="range" class="progress" value="0">
-  <span class="time">0:00</span>
-  <audio src="2024-02-09-shumoved-loving-you.mp3"></audio>
-</div>
-
-
-
-
-
-
-<script>
-document.querySelectorAll(".player").forEach(player => {
-
-  const audio = player.querySelector("audio");
-  const playBtn = player.querySelector(".play");
-  const progress = player.querySelector(".progress");
-  const time = player.querySelector(".time");
-
-  playBtn.onclick = () => {
-    if (audio.paused) {
-      audio.play();
-      playBtn.textContent = "PAUSE";
-    } else {
-      audio.pause();
-      playBtn.textContent = "_PLAY";
-    }
-  };
-
-  audio.ontimeupdate = () => {
-    progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-    time.textContent = formatTime(audio.currentTime);
-  };
-
-  progress.oninput = () => {
-    audio.currentTime = (progress.value / 100) * audio.duration;
-  };
-
-});
-
-function formatTime(sec) {
-  const m = Math.floor(sec / 60);
-  const s = Math.floor(sec % 60);
-  return `${m}:${s < 10 ? "0" : ""}${s}`;
-}
-
-
-
-
-
-
-
-
-
-
-
-</script>
   
   
   
